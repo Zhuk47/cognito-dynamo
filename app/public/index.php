@@ -44,6 +44,7 @@ if(isset($_GET['reset'])) {
         <meta http-equiv='x-ua-compatible' content='ie=edge'>
         <title>AWS Cognito App - Register and Login</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     </head>
     <body>
         <h1>Menu</h1>

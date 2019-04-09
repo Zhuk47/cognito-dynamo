@@ -11,16 +11,16 @@ $entercode = false;
 if(isset($_POST['action'])) {
 
     if($_POST['action'] === 'code') {
-        $username = $_POST['username'] ?? '';
+        $email = $_POST['email'] ?? '';
 
-        $error = $wrapper->sendPasswordResetMail($username);
+        $error = $wrapper->sendPasswordResetMail($email);
 
         if(empty($error)) {
-            header('Location: forgotpassword.php?username=' . $username);
+            header('Location: forgotpassword.php?username=' . $email);
         }
     }
 
-    if($_POST['action'] == 'reset') {
+    if($_POST['action'] === 'reset') {
 
         $code = $_POST['code'] ?? '';
         $password = $_POST['password'] ?? '';
@@ -69,9 +69,9 @@ if(isset($_GET['username'])) {
         </form>
         <?php } else { ?>
         <h1>Forgotten password</h1>
-        <p>Enter your username and we will sent you a reset code to your e-mailadres.</p>
+        <p>Enter your username and we will sent you a reset code to your e-mail address.</p>
         <form method='post' action=''>
-            <input type='text' placeholder='Username' name='username' /><br />
+            <input type='text' placeholder='Email' name='email' /><br />
             <input type='hidden' name='action' value='register' />
             <input type='hidden' name='action' value='code' />
             <input type='submit' value='Receive code' />
